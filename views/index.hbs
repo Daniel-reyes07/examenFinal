@@ -1,0 +1,37 @@
+{{>header}}
+{{>nav}}
+    <div class="container">
+
+            {{#if pintores}}
+
+            <table class="table table-bordered table-danger">
+                <thead>
+
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Nombre del pintor</th>
+                        <th scope="col">Nacionalidad</th>
+                        <th scope="col">Estilo</th>
+                        <th scope="col">Datos Biograficos</th>
+                        <th scope="col">Foto del pintor</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {{#each pintores}}
+                    <tr>
+                        <td>{{_id}}</td>
+                        <td>{{name}}</td>
+                        <td>{{nacionalidad}}</td>
+                        <td>{{estilo}}</td>
+                        <td><a href="{{datos}}">Acceder a Datos Biograficos</a></td>
+                        <td><img src="img/{{pintura}}"></td>
+                    </tr>
+                {{/each}}
+                </tbody>
+            </table>
+            {{else}}
+                <p>No hay pintores encontrados en la base de datos</p>
+            {{/if}}
+        </table>
+    </div>
+{{>footer}}
